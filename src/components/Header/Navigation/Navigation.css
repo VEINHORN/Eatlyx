@@ -1,0 +1,17 @@
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-family: Inter;
+  font-size: 0.95rem;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav-links li:hover,
+.nav-links .active {
+  color: var(--highlight-color);
+}

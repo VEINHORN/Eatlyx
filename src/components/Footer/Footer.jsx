@@ -1,52 +1,43 @@
-import instagram from "../../assets/images/icons/instagram.svg";
-import twitter from "../../assets/images/icons/twitter.svg";
-import youtube from "../../assets/images/icons/youtube.svg";
+import InstagramIcon from "../../assets/images/icons/instagram.svg?react";
+import TwitterIcon from "../../assets/images/icons/twitter.svg?react";
+import YoutubeIcon from "../../assets/images/icons/youtube.svg?react";
+import Logo from "../Logo/Logo";
+import { FooterColumn } from "./FooterColumn/FooterColumn";
 import "./Footer.css";
-import logo from "../../assets/images/logos/logo.svg";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-top">
         <div className="footer-intro">
-          <img src={logo}/>
+          <Logo />
           <h4>Takeaway & Delivery</h4>
           <p>for small - medium businesses.</p>
         </div>
 
         <div className="footer-columns">
-          <div>
-            <h5>Company</h5>
-            <ul>
-              <li>Home</li>
-              <li>Order</li>
-              <li>FAQ</li>
-              <li>Contact</li>
-            </ul>
-          </div>
-          <div>
-            <h5>Template</h5>
-            <ul>
-              <li>Style Guide</li>
-              <li>Changelog</li>
-              <li>Licence</li>
-              <li>Webflow University</li>
-            </ul>
-          </div>
-          <div>
-            <h5>Flowbase</h5>
-            <ul>
-              <li>More Cloneables</li>
-            </ul>
-          </div>
+          <FooterColumn
+            columnName="Company"
+            items={["Home", "Order", "FAQ", "Contact"]}
+          />
+          <FooterColumn
+            columnName="Template"
+            items={[
+              "Style Guide",
+              "Changelog",
+              "Licence",
+              "Webflow University",
+            ]}
+          />
+          <FooterColumn columnName="Flowbase" items={["More Cloneables"]} />
         </div>
       </div>
 
       <div className="footer-bottom">
         <div className="social-links">
-          <img src={instagram} alt="Instagram" />
-          <img src={twitter} alt="Twitter" />
-          <img src={youtube} alt="YouTube" />
+          <InstagramIcon className="social-link" alt="Instagram" />
+          <TwitterIcon className="social-link" alt="Twitter" />
+          <YoutubeIcon className="social-link" alt="YouTube" />
         </div>
       </div>
     </footer>

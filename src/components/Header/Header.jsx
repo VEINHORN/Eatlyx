@@ -1,27 +1,18 @@
-import logo from "../../assets/images/logos/logo.svg";
-import bucket from "../../assets/images/icons/bucket.svg";
+import Logo from "../Logo/Logo";
+import Bucket from "../Bucket/Bucket";
+import { Navigation } from "./Navigation/Navigation";
 import "./Header.css";
 
 const Header = () => {
   return (
     <header className="header">
-      <nav className="navbar">
-        <div className="logo">
-          <img src={logo} alt="Logo" className="logo-img" />
-        </div>
+      <div className="navbar">
+        <Logo />
         <div className="nav-links-wrapper">
-          <ul className="nav-links">
-            <li className="active">Home</li>
-            <li>Menu</li>
-            <li>Company</li>
-            <li>Login</li>
-          </ul>
-          <button className="cart-btn">
-            <img src={bucket} />
-            <span className="cart-count">0</span>
-          </button>
+          <Navigation items={["Home", "Menu", "Company", "Login"]} />
+          <Bucket />
         </div>
-      </nav>
+      </div>
     </header>
   );
 };

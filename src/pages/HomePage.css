@@ -1,8 +1,11 @@
 .homepage {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-color: #f8fdfd;
+
+  background-image: url("../assets/images/backgrounds/hero-background.svg");
+  background-size: cover;
+  background-position: right top;
+  background-repeat: no-repeat;
 }
 
 .hero {
@@ -30,53 +33,7 @@
 }
 
 .highlight {
-  color: #06b6d4;
-}
-
-.order-btn {
-  background-color: #06b6d4;
-  color: white;
-  padding: 0.8rem 1.8rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.order-btn:hover {
-  background-color: #0891b2;
-}
-
-.rating-wrapper {
-  margin-top: 20px;
-}
-
-.rating-logo {
-  width: 5rem;
-  height: auto;
-}
-
-.rating {
-  display: flex;
-  align-items: center;
-
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.rating p {
-  margin: 0px;
-}
-
-.star-icon {
-  color: #22c55e;
-  margin-right: 0.5rem;
-}
-
-.green-text {
-  color: #22c55e;
-  font-weight: 600;
+  color: var(--highlight-color);
 }
 
 .hero-image {
@@ -87,23 +44,6 @@
   border-radius: 20px;
   width: 280px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.floating-icons {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  display: flex;
-  gap: 10px;
-  background: white;
-  padding: 8px 12px;
-  border-radius: 30px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.floating-icons img {
-  width: 20px;
-  height: 20px;
 }
 
 @media (min-width: 768px) {

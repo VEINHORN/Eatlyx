@@ -1,14 +1,12 @@
-import "./HomePage.css";
-
 import food from "../assets/images/backgrounds/food.png";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
-import trustpilotLogo from "../assets/images/logos/trustpilot-logo.svg";
+import Button from "../components/Button/Button";
+import { Rating } from "../components/Rating/Rating";
+
+import "./HomePage.css";
 
 const HomePage = () => {
   return (
     <>
-      <Header />
       <div className="homepage">
         <section className="hero">
           <div className="hero-content">
@@ -20,17 +18,9 @@ const HomePage = () => {
               Enjoy restaurant-quality meals made with fresh ingredients.
               Delivered hot and ready whenever you are.
             </p>
-            <button className="order-btn">Place an Order</button>
+            <Button title="Place an Order" />
 
-            <div className="rating-wrapper">
-              <img src={trustpilotLogo} className="rating-logo"/>
-              <div className="rating">
-                <p>
-                  <span className="green-text">4.8 out of 5</span> based on
-                  2000+ reviews
-                </p>
-              </div>
-            </div>
+            <Rating />
           </div>
 
           <div className="food-image">
@@ -38,7 +28,6 @@ const HomePage = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

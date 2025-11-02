@@ -1,3 +1,8 @@
+:root {
+  --highlight-color: #35b8be;
+  --footer-background-color: #e8f4f4;
+}
+
 body {
   margin: 0;
   display: flex;
