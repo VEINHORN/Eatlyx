@@ -1,0 +1,29 @@
+.footer-columns h5 {
+  text-align: left;
+
+  font-weight: 400;
+  text-transform: uppercase;
+  size: 13px;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 1.5px;
+
+  margin-bottom: 1.5rem;
+}
+
+.footer-columns ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-columns li {
+  color: #666;
+  size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0%;
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,30 @@
+.rating-wrapper {
+  margin-top: 20px;
+}
+
+.rating-logo {
+  width: 5rem;
+  height: auto;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.rating p {
+  margin: 0px;
+}
+
+.star-icon {
+  color: #22c55e;
+  margin-right: 0.5rem;
+}
+
+.green-text {
+  color: #22c55e;
+  font-weight: 600;
+}
