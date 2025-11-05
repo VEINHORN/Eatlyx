@@ -27,3 +27,9 @@
   letter-spacing: 0%;
   margin-bottom: 1.5rem;
 }
+
+.footer-column a {
+  color: #546285;
+
+  text-decoration: none;
+}

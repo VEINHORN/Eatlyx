@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
 
-  background-image: url("../assets/images/backgrounds/hero-background.svg");
+  background-image: url("../../assets/images/backgrounds/hero-background.svg");
   background-size: cover;
   background-position: right top;
   background-repeat: no-repeat;
