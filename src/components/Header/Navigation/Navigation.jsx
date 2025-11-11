@@ -5,7 +5,7 @@ export const Navigation = ({ items }) => {
     <nav>
       <ul className="nav-links">
         {items.map((item) => (
-          <li key={item} className={item == "Home" ? "active" : ""}>
+          <li key={item} className={item == "Menu" ? "active" : ""}>
             {item}
           </li>
         ))}

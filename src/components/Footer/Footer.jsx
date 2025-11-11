@@ -28,6 +28,7 @@ const Footer = () => {
               "Licence",
               "Webflow University",
             ]}
+            clickable
           />
           <FooterColumn columnName="Flowbase" items={["More Cloneables"]} />
         </div>
