@@ -1,13 +1,13 @@
 import TrustpilotLogo from "../../assets/images/logos/trustpilot-logo.svg?react";
-import "./Rating.css";
+import styles from "./Rating.module.css";
 
 export const Rating = () => {
   return (
-    <div className="rating-wrapper">
-      <TrustpilotLogo className="rating-logo" />
-      <div className="rating">
+    <div className={styles.ratingWrapper}>
+      <TrustpilotLogo className={styles.ratingLogo} />
+      <div className={styles.rating}>
         <p>
-          <span className="green-text">4.8 out of 5</span> based on 2000+
+          <span className={styles.greenText}>4.8 out of 5</span> based on 2000+
           reviews
         </p>
       </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../Button/Button";
-import "./Card.css";
+import styles from "./Card.module.css";
 
 export const Card = ({ meal, image, price, instructions, onAddToBucket }) => {
   const [itemsCount, setItemsCount] = useState(1);
@@ -14,18 +14,18 @@ export const Card = ({ meal, image, price, instructions, onAddToBucket }) => {
   };
 
   return (
-    <div className="card">
-      <div className="card-image">
+    <div className={styles.card}>
+      <div className={styles.cardImage}>
         <img src={image} />
       </div>
 
-      <div className="card-info">
-        <div className="card-header">
-          <h3 className="card-title">{meal}</h3>
+      <div className={styles.cardInfo}>
+        <div className={styles.cardHeader}>
+          <h3 className={styles.cardTitle}>{meal}</h3>
           <span>$ {price} USD</span>
         </div>
-        <p className="card-description">{instructions}</p>
-        <div className="card-control">
+        <p className={styles.cardDescription}>{instructions}</p>
+        <div className={styles.cardControl}>
           <input
             type="number"
             min={1}

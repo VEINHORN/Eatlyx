@@ -1,8 +1,8 @@
-import "./FooterColumn.css";
+import styles from "./FooterColumn.module.css";
 
 export const FooterColumn = ({ columnName, items, clickable }) => {
   return (
-    <div className="footer-column">
+    <div className={styles.footerColumn}>
       <h5>{columnName}</h5>
       <ul>
         {items.map((item) => (

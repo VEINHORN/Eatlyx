@@ -1,10 +1,10 @@
 import LogoImage from "../../assets/images/logos/logo.svg?react";
-import "./Logo.css";
+import styles from "./Logo.module.css";
 
 const Logo = () => {
   return (
-    <a href="#" className="logo">
-      <LogoImage alt="Logo" className="logo-img" />
+    <a href="#" className={styles.logo}>
+      <LogoImage alt="Logo" className={styles.logoImg} />
     </a>
   );
 };

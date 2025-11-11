@@ -1,8 +1,8 @@
-.rating-wrapper {
+.ratingWrapper {
   margin-top: 20px;
 }
 
-.rating-logo {
+.ratingLogo {
   width: 5rem;
   height: auto;
 }
@@ -19,12 +19,12 @@
   margin: 0px;
 }
 
-.star-icon {
+.starIcon {
   color: #22c55e;
   margin-right: 0.5rem;
 }
 
-.green-text {
+.greenText {
   color: #22c55e;
   font-weight: 600;
 }

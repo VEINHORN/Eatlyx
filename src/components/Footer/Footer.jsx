@@ -3,19 +3,19 @@ import TwitterIcon from "../../assets/images/icons/twitter.svg?react";
 import YoutubeIcon from "../../assets/images/icons/youtube.svg?react";
 import Logo from "../Logo/Logo";
 import { FooterColumn } from "./FooterColumn/FooterColumn";
-import "./Footer.css";
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-top">
-        <div className="footer-intro">
+    <footer className={styles.footer}>
+      <div className={styles.footerTop}>
+        <div className={styles.footerIntro}>
           <Logo />
           <h4>Takeaway & Delivery</h4>
           <p>for small - medium businesses.</p>
         </div>
 
-        <div className="footer-columns">
+        <div className={styles.footerColumns}>
           <FooterColumn
             columnName="Company"
             items={["Home", "Order", "FAQ", "Contact"]}
@@ -34,11 +34,11 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <div className="social-links">
-          <InstagramIcon className="social-link" alt="Instagram" />
-          <TwitterIcon className="social-link" alt="Twitter" />
-          <YoutubeIcon className="social-link" alt="YouTube" />
+      <div className={styles.footerBottom}>
+        <div className={styles.socialLinks}>
+          <InstagramIcon className={styles.socialLink} alt="Instagram" />
+          <TwitterIcon className={styles.socialLink} alt="Twitter" />
+          <YoutubeIcon className={styles.socialLink} alt="YouTube" />
         </div>
       </div>
     </footer>

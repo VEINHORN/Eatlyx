@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import Button from "../../components/Button/Button";
 import { Card } from "../../components/Card/Card";
 
-import "./MenuPage.css";
+import styles from "./MenuPage.module.css";
 
 export const MenuPage = ({ onAddToBucket }) => {
   const [page, setPage] = useState(1);
@@ -34,13 +34,13 @@ export const MenuPage = ({ onAddToBucket }) => {
   const pageMeals = meals.slice(0, page * MAX_PAGE_SIZE);
 
   return (
-    <div className="menupage">
-      <div className="info">
-        <h1 className="page-title">Browse our menu</h1>
-        <p className="page-description">
+    <div className={styles.menupage}>
+      <div className={styles.info}>
+        <h1 className={styles.pageTitle}>Browse our menu</h1>
+        <p className={styles.pageDescription}>
           Use our menu to place an order online, or{" "}
           <span
-            className="highlight tooltip"
+            className={`${styles.highlight} ${styles.tooltip}`}
             data-tooltip="Call us at 123-456-789"
           >
             phone
@@ -51,13 +51,13 @@ export const MenuPage = ({ onAddToBucket }) => {
         </p>
       </div>
 
-      <div className="buttons">
+      <div className={styles.buttons}>
         {categories.map((category) => (
           <Button key={category} title={category} outlined />
         ))}
       </div>
 
-      <div className="cards">
+      <div className={styles.cards}>
         {pageMeals.map((meal) => (
           <Card
             key={meal.id}
@@ -70,7 +70,7 @@ export const MenuPage = ({ onAddToBucket }) => {
         ))}
       </div>
 
-      <div className="see-more-btn-wrapper">
+      <div>
         {isSeeMoreButtonVisible && (
           <Button title="See more" onClick={handleSeeMoreButtonClick} />
         )}

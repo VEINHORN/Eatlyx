@@ -9,14 +9,14 @@
   border-radius: 6px;
 }
 
-.btn-regular {
+.btnRegular {
   background-color: var(--highlight-color);
 
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
-.btn-outlined {
+.btnOutlined {
   color: #222222;
   background: transparent;
   border: 1px solid rgba(97, 114, 131, 0.2);

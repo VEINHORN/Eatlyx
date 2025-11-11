@@ -12,7 +12,7 @@
   padding-right: 5rem;
 }
 
-.nav-links-wrapper {
+.navLinksWrapper {
   display: flex;
   justify-content: space-between;
   gap: 5rem;

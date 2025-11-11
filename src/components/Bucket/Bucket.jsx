@@ -1,11 +1,11 @@
 import BucketIcon from "../../assets/images/icons/bucket.svg?react";
-import "./Bucket.css";
+import styles from "./Bucket.module.css";
 
 const Bucket = ({ bucketCount }) => {
   return (
-    <button className="cart-btn">
+    <button className={styles.cartBtn}>
       <BucketIcon />
-      <span className="cart-count">{bucketCount}</span>
+      <span className={styles.cartCount}>{bucketCount}</span>
     </button>
   );
 };

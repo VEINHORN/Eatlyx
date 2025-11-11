@@ -1,4 +1,4 @@
-.nav-links {
+.navLinks {
   display: flex;
   gap: 2rem;
   list-style: none;
@@ -6,12 +6,12 @@
   font-size: 0.95rem;
 }
 
-.nav-links li {
+.navLinks li {
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
-.nav-links li:hover,
-.nav-links .active {
+.navLinks li:hover,
+.navLinks .active {
   color: var(--highlight-color);
 }

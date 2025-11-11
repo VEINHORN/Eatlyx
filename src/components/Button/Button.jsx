@@ -1,9 +1,11 @@
-import "./Button.css";
+import styles from "./Button.module.css";
 
 const Button = ({ title, onClick, outlined }) => {
   return (
     <button
-      className={outlined ? "btn btn-outlined" : "btn btn-regular"}
+      className={`${styles.btn} ${
+        outlined ? styles.btnOutlined : styles.btnRegular
+      }`}
       onClick={onClick}
     >
       {title}

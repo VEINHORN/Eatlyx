@@ -2,6 +2,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import "./App.css";
 import { MenuPage } from "./pages/MenuPage/MenuPage";
+import { HomePage } from "./pages/HomePage/HomePage";
 import { useState } from "react";
 
 function App() {
