@@ -2,16 +2,15 @@ import { useState } from "react";
 import Button from "../Button/Button";
 import "./Card.css";
 
-export const Card = ({ meal, image, price, onAddToBucket }) => {
+export const Card = ({ meal, image, price, instructions, onAddToBucket }) => {
   const [itemsCount, setItemsCount] = useState(1);
 
   const handleAddToCart = () => {
-    if (itemsCount == 1) onAddToBucket(2);
-    else onAddToBucket(1);
+    onAddToBucket(itemsCount);
+  };
 
-    setItemsCount((prevItemsCount) => {
-      return prevItemsCount + 1;
-    });
+  const handleChange = (event) => {
+    setItemsCount(Number(event.target.value));
   };
 
   return (
@@ -25,12 +24,14 @@ export const Card = ({ meal, image, price, onAddToBucket }) => {
           <h3 className="card-title">{meal}</h3>
           <span>$ {price} USD</span>
         </div>
-        <p className="card-description">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
-        </p>
+        <p className="card-description">{instructions}</p>
         <div className="card-control">
-          <input value={itemsCount} readOnly />
+          <input
+            type="number"
+            min={1}
+            value={itemsCount}
+            onChange={handleChange}
+          />
           <Button title="Add to card" onClick={handleAddToCart} />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Button from "../../components/Button/Button";
 import { Card } from "../../components/Card/Card";
 
@@ -9,24 +9,29 @@ export const MenuPage = ({ onAddToBucket }) => {
   const [meals, setMeals] = useState([]);
   const [isSeeMoreButtonVisible, setIsSeeMoreButtonVisible] = useState(true);
 
+  const MAX_PAGE_SIZE = 6;
+
   useEffect(() => {
-    fetch(
-      `https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals?page=${page}&limit=6`
-    )
+    fetch("https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals")
       .then((res) => res.json())
       .then((meals) => {
-        if (meals.length === 0) {
-          setIsSeeMoreButtonVisible(false);
-          return;
-        }
-
-        setMeals((existingMeals) => existingMeals.concat(meals));
+        setMeals(meals);
       });
-  }, [page]);
+  }, []);
+
+  const categories = useMemo(() => {
+    return Array.from(new Set(meals.map((meal) => meal.category)));
+  }, [meals]);
 
   const handleSeeMoreButtonClick = () => {
-    setPage((prevPage) => prevPage + 1);
+    if ((page + 1) * MAX_PAGE_SIZE >= meals.length) {
+      setIsSeeMoreButtonVisible(false);
+    }
+
+    setPage(page + 1);
   };
+
+  const pageMeals = meals.slice(0, page * MAX_PAGE_SIZE);
 
   return (
     <div className="menupage">
@@ -40,23 +45,26 @@ export const MenuPage = ({ onAddToBucket }) => {
           >
             phone
           </span>{" "}
-          our store<br/>to place a pickup order. Fast and fresh food.
+          our store
+          <br />
+          to place a pickup order. Fast and fresh food.
         </p>
       </div>
 
       <div className="buttons">
-        <Button title="Desert" />
-        <Button title="Dinner" outlined />
-        <Button title="Breakfast" outlined />
+        {categories.map((category) => (
+          <Button key={category} title={category} outlined />
+        ))}
       </div>
 
       <div className="cards">
-        {meals.map((meal) => (
+        {pageMeals.map((meal) => (
           <Card
             key={meal.id}
             meal={meal.meal}
             image={meal.img}
             price={meal.price}
+            instructions={meal.instructions}
             onAddToBucket={onAddToBucket}
           />
         ))}
