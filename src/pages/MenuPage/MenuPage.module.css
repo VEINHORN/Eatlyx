@@ -16,7 +16,7 @@
   line-height: 55px;
   letter-spacing: 1.65px;
 
-  color: var(--highlight-color);
+  color: var(--primary-color);
 }
 
 .pageDescription {
@@ -36,23 +36,8 @@
   gap: 1.5rem;
 }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.cards > * {
-  flex: 1 1 calc(50% - 1rem);
-  box-sizing: border-box;
-}
-
 .highlight {
-  color: var(--highlight-color);
+  color: var(--primary-color);
   cursor: pointer;
   position: relative;
 }
@@ -63,7 +48,7 @@
   bottom: 125%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--highlight-color);
+  background-color: var(--primary-color);
   color: #fff;
   padding: 6px 10px;
   border-radius: 4px;

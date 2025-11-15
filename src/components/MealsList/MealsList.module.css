@@ -1,0 +1,34 @@
+.cardsWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  max-width: var(--max-width);
+
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.cards > * {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+}
+
+.seeMoreContainer {
+  display: flex;
+  justify-content: center;
+}

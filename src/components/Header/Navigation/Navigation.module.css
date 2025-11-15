@@ -13,5 +13,5 @@
 
 .navLinks li:hover,
 .navLinks .active {
-  color: var(--highlight-color);
+  color: var(--primary-color);
 }

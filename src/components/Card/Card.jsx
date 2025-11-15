@@ -22,7 +22,7 @@ export const Card = ({ meal, image, price, instructions, onAddToBucket }) => {
       <div className={styles.cardInfo}>
         <div className={styles.cardHeader}>
           <h3 className={styles.cardTitle}>{meal}</h3>
-          <span>$ {price} USD</span>
+          <span className={styles.price}>$ {price} USD</span>
         </div>
         <p className={styles.cardDescription}>{instructions}</p>
         <div className={styles.cardControl}>

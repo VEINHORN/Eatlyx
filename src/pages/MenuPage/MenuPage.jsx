@@ -1,15 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import Button from "../../components/Button/Button";
-import { Card } from "../../components/Card/Card";
+import { MealsList } from "../../components/MealsList/MealsList";
 
 import styles from "./MenuPage.module.css";
 
 export const MenuPage = ({ onAddToBucket }) => {
-  const [page, setPage] = useState(1);
   const [meals, setMeals] = useState([]);
-  const [isSeeMoreButtonVisible, setIsSeeMoreButtonVisible] = useState(true);
-
-  const MAX_PAGE_SIZE = 6;
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
     fetch("https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals")
@@ -23,15 +20,19 @@ export const MenuPage = ({ onAddToBucket }) => {
     return Array.from(new Set(meals.map((meal) => meal.category)));
   }, [meals]);
 
-  const handleSeeMoreButtonClick = () => {
-    if ((page + 1) * MAX_PAGE_SIZE >= meals.length) {
-      setIsSeeMoreButtonVisible(false);
+  const filteredMeals = useMemo(() => {
+    if (!selectedCategory) return meals;
+    return meals.filter((meal) => meal.category === selectedCategory);
+  }, [meals, selectedCategory]);
+
+  const onCategoryButtonHandler = (category) => {
+    if (category === selectedCategory) {
+      setSelectedCategory(null);
+      return;
     }
 
-    setPage(page + 1);
+    setSelectedCategory(category);
   };
-
-  const pageMeals = meals.slice(0, page * MAX_PAGE_SIZE);
 
   return (
     <div className={styles.menupage}>
@@ -53,28 +54,16 @@ export const MenuPage = ({ onAddToBucket }) => {
 
       <div className={styles.buttons}>
         {categories.map((category) => (
-          <Button key={category} title={category} outlined />
-        ))}
-      </div>
-
-      <div className={styles.cards}>
-        {pageMeals.map((meal) => (
-          <Card
-            key={meal.id}
-            meal={meal.meal}
-            image={meal.img}
-            price={meal.price}
-            instructions={meal.instructions}
-            onAddToBucket={onAddToBucket}
+          <Button
+            key={category}
+            title={category}
+            outlined={selectedCategory !== category}
+            onClick={() => onCategoryButtonHandler(category)}
           />
         ))}
       </div>
 
-      <div>
-        {isSeeMoreButtonVisible && (
-          <Button title="See more" onClick={handleSeeMoreButtonClick} />
-        )}
-      </div>
+      <MealsList meals={filteredMeals} onAddToBucket={onAddToBucket} />
     </div>
   );
 };
