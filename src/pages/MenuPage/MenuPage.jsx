@@ -1,20 +1,16 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Button from "../../components/Button/Button";
 import { MealsList } from "../../components/MealsList/MealsList";
 
 import styles from "./MenuPage.module.css";
+import { useFetch } from "../../hooks/useFetch";
 
 export const MenuPage = ({ onAddToBucket }) => {
-  const [meals, setMeals] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  useEffect(() => {
-    fetch("https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals")
-      .then((res) => res.json())
-      .then((meals) => {
-        setMeals(meals);
-      });
-  }, []);
+  const meals = useFetch(
+    "https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals"
+  );
 
   const categories = useMemo(() => {
     return Array.from(new Set(meals.map((meal) => meal.category)));
