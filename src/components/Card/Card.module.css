@@ -1,11 +1,13 @@
 .card {
   display: flex;
-  justify-content: space-between;
 
   max-width: 520px;
   padding: 20px;
 
   background-color: #ffffff;
+
+  border: 1px solid var(--primary-color-opaque-15);
+  border-radius: 6px;
 }
 
 .cardImage {
@@ -14,6 +16,8 @@
 }
 
 .cardInfo {
+  flex: 1;
+
   padding-top: 5px;
   padding-left: 25px;
 }
@@ -29,17 +33,10 @@
   justify-content: space-between;
 }
 
-.cardHeader span {
-  font-family: Inter;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: 0%;
-  color: var(--highlight-color);
-}
-
 .cardTitle {
+  flex: 0.75;
+  text-align: left;
+
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
@@ -47,6 +44,18 @@
   letter-spacing: 0.6px;
   line-height: 20px;
   color: #08090a;
+}
+
+.price {
+  flex: 0.25;
+
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: var(--primary-color);
 }
 
 .cardDescription {

@@ -33,7 +33,7 @@
 }
 
 .highlight {
-  color: var(--highlight-color);
+  color: var(--primary-color);
 }
 
 .heroImage {

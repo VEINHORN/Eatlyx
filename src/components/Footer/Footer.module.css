@@ -78,7 +78,7 @@
 }
 
 .footerBottom span.highlight {
-  color: var(--highlight-color);
+  color: var(--primary-color);
   font-weight: 500;
 }
 

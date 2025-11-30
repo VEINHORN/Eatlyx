@@ -1,5 +1,8 @@
 :root {
-  --highlight-color: #35b8be;
+  --max-width: 1200px;
+
+  --primary-color: #35b8be;
+  --primary-color-opaque-15: #35b8be26;
   --footer-background-color: #e8f4f4;
 }
 
