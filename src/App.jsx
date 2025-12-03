@@ -1,20 +1,20 @@
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import "./App.css";
-import { MenuPage } from "./pages/MenuPage/MenuPage";
 import { useState } from "react";
+import { Outlet } from "react-router";
 
 function App() {
   const [bucketCount, setBucketCount] = useState(0);
 
-  const handleAddToBucket = (count) => {
+  const handleAddToBucket = async (count) => {
     setBucketCount((prevBucketCount) => prevBucketCount + count);
   };
 
   return (
     <>
       <Header bucketCount={bucketCount} />
-      <MenuPage onAddToBucket={handleAddToBucket} />
+      <Outlet context={{ handleAddToBucket }} />
       <Footer />
     </>
   );

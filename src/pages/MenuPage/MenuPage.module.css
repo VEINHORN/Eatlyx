@@ -8,17 +8,6 @@
   background-repeat: no-repeat;
 }
 
-.pageTitle {
-  font-family: Inter;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 50px;
-  line-height: 55px;
-  letter-spacing: 1.65px;
-
-  color: var(--primary-color);
-}
-
 .pageDescription {
   font-family: Inter;
   font-weight: 400;

@@ -4,8 +4,10 @@ import { MealsList } from "../../components/MealsList/MealsList";
 
 import styles from "./MenuPage.module.css";
 import { useFetch } from "../../hooks/useFetch";
+import { useOutletContext } from "react-router";
 
-export const MenuPage = ({ onAddToBucket }) => {
+export const MenuPage = () => {
+  const { handleAddToBucket: onAddToBucket } = useOutletContext();
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const meals = useFetch(
@@ -33,7 +35,7 @@ export const MenuPage = ({ onAddToBucket }) => {
   return (
     <div className={styles.menupage}>
       <div className={styles.info}>
-        <h1 className={styles.pageTitle}>Browse our menu</h1>
+        <h1 className="h1Title">Browse our menu</h1>
         <p className={styles.pageDescription}>
           Use our menu to place an order online, or{" "}
           <span
