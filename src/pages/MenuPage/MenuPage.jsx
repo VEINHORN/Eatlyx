@@ -4,10 +4,8 @@ import { MealsList } from "../../components/MealsList/MealsList";
 
 import styles from "./MenuPage.module.css";
 import { useFetch } from "../../hooks/useFetch";
-import { useOutletContext } from "react-router";
 
 export const MenuPage = () => {
-  const { handleAddToBucket: onAddToBucket } = useOutletContext();
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const meals = useFetch(
@@ -61,7 +59,7 @@ export const MenuPage = () => {
         ))}
       </div>
 
-      <MealsList meals={filteredMeals} onAddToBucket={onAddToBucket} />
+      <MealsList meals={filteredMeals} />
     </div>
   );
 };

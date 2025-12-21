@@ -7,7 +7,7 @@ import styles from "./MealsList.module.css";
 const INITIAL_PAGE = 1;
 const MAX_PAGE_SIZE = 6;
 
-export const MealsList = ({ meals, onAddToBucket }) => {
+export const MealsList = ({ meals }) => {
   const [page, setPage] = useState(INITIAL_PAGE);
 
   useEffect(() => {
@@ -24,11 +24,11 @@ export const MealsList = ({ meals, onAddToBucket }) => {
           {pageMeals.map((meal) => (
             <Card
               key={meal.id}
+              id={meal.id}
               meal={meal.meal}
               image={meal.img}
               price={meal.price}
               instructions={meal.instructions}
-              onAddToBucket={onAddToBucket}
             />
           ))}
         </div>
