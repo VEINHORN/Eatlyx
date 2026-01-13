@@ -6,6 +6,10 @@
   background-color: var(--primary-color);
   border-radius: 5px;
   padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .cartCount {

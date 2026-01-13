@@ -5,8 +5,8 @@ import styles from "./Card.module.css";
 export const Card = ({ meal, image, price, instructions, onAddToBucket }) => {
   const [itemsCount, setItemsCount] = useState(1);
 
-  const handleAddToCart = () => {
-    onAddToBucket(itemsCount);
+  const handleAddToCart = async () => {
+    await onAddToBucket(itemsCount);
   };
 
   const handleChange = (event) => {
