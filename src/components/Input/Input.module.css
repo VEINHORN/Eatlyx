@@ -1,0 +1,16 @@
+.input {
+  max-width: 60px;
+  min-height: 45px;
+  max-height: 45px;
+  text-align: center;
+  background-color: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.36px;
+  line-height: 27px;
+}

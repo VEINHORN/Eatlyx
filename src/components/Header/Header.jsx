@@ -5,7 +5,7 @@ import styles from "./Header.module.css";
 import { useAuth } from "../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router";
 
-const Header = ({ bucketCount }) => {
+const Header = () => {
   const navigate = useNavigate();
   const { isAuthenticated, loading, logout } = useAuth();
 
@@ -32,7 +32,7 @@ const Header = ({ bucketCount }) => {
                 : [{ label: "Login", path: "/login" }]),
             ]}
           />
-          <Bucket bucketCount={bucketCount} />
+          <Bucket />
         </div>
       </div>
     </header>

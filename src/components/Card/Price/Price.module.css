@@ -1,0 +1,12 @@
+.price {
+  flex: 0.25;
+  min-width: 100px;
+
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: var(--primary-color);
+}
