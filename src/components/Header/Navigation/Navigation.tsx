@@ -1,7 +1,12 @@
 import { NavLink } from "react-router";
 import styles from "./Navigation.module.css";
+import type { NavigationItem } from "../../../types/navigationItemType";
 
-export const Navigation = ({ items }) => {
+type NavigationProps = {
+  items: NavigationItem[];
+};
+
+export const Navigation = ({ items }: NavigationProps) => {
   return (
     <nav>
       <ul className={styles.navLinks}>

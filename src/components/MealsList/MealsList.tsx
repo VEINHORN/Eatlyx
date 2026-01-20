@@ -3,11 +3,16 @@ import Button from "../Button/Button";
 import { Card } from "../Card/Card";
 
 import styles from "./MealsList.module.css";
+import type { Meal } from "../../types/mealType";
 
 const INITIAL_PAGE = 1;
 const MAX_PAGE_SIZE = 6;
 
-export const MealsList = ({ meals }) => {
+type MealsListProps = {
+  meals: Meal[];
+};
+
+export const MealsList = ({ meals }: MealsListProps) => {
   const [page, setPage] = useState(INITIAL_PAGE);
 
   useEffect(() => {

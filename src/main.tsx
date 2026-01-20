@@ -12,7 +12,7 @@ import { PublicRoute } from "./components/PublicRoute/PublicRoute.jsx";
 import { store } from "./store";
 import { Provider } from "react-redux";
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
     <AuthProvider>
       <BrowserRouter>
@@ -30,5 +30,5 @@ createRoot(document.getElementById("root")).render(
         </Routes>
       </BrowserRouter>
     </AuthProvider>
-  </Provider>
+  </Provider>,
 );

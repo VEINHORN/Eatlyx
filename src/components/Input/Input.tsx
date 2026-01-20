@@ -1,6 +1,11 @@
+import type { InputHTMLAttributes } from "react";
 import styles from "./Input.module.css";
 
-const Input = ({ value, onChange, ...rest }) => {
+type InputProps = {
+  value: string;
+} & InputHTMLAttributes<HTMLInputElement>;
+
+const Input = ({ value, onChange, ...rest }: InputProps) => {
   return (
     <input
       type="number"
@@ -14,4 +19,3 @@ const Input = ({ value, onChange, ...rest }) => {
 };
 
 export default Input;
-

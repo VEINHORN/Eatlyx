@@ -4,12 +4,13 @@ import { Navigation } from "./Navigation/Navigation";
 import styles from "./Header.module.css";
 import { useAuth } from "../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router";
+import type React from "react";
 
 const Header = () => {
   const navigate = useNavigate();
   const { isAuthenticated, loading, logout } = useAuth();
 
-  const handleLogout = async (e) => {
+  const handleLogout = async (e: React.MouseEvent) => {
     e.preventDefault();
     await logout();
     navigate("/");

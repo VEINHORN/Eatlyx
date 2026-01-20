@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Button from "../../components/Button/Button";
 import styles from "./LoginPage.module.css";
 import { useNavigate } from "react-router";
@@ -10,7 +10,7 @@ export const LoginPage = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!email || !password) {
@@ -22,7 +22,11 @@ export const LoginPage = () => {
       await signInUser(email, password);
       navigate("/order");
     } catch (err) {
-      setError(err.message);
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred");
+      }
     }
   };
 
@@ -55,7 +59,7 @@ export const LoginPage = () => {
             />
           </div>
           <div className={styles.buttons}>
-            <Button title="Submit " type="submit" />
+            <Button title="Submit" type="submit" />
             <Button title="Cancel" outlined onClick={handleCancel} />
           </div>
         </form>

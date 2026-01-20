@@ -26,7 +26,7 @@ export const HomePage = () => {
         </div>
 
         <div className={styles.foodImage}>
-          <img src={food} alt="Food delivery" />
+          <img src={food} aria-label="Food delivery" />
         </div>
       </section>
     </div>

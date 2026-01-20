@@ -1,6 +1,16 @@
 import styles from "./FooterColumn.module.css";
 
-export const FooterColumn = ({ columnName, items, clickable }) => {
+type FooterColumnProps = {
+  columnName: string;
+  items: string[];
+  clickable?: boolean;
+};
+
+export const FooterColumn = ({
+  columnName,
+  items,
+  clickable,
+}: FooterColumnProps) => {
   return (
     <div className={styles.footerColumn}>
       <h5>{columnName}</h5>

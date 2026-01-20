@@ -1,6 +1,10 @@
 import styles from "./Price.module.css";
 
-const Price = ({ price }) => {
+type PriceProps = {
+  price: string;
+};
+
+const Price = ({ price }: PriceProps) => {
   return <span className={styles.price}>$ {price} USD</span>;
 };
 

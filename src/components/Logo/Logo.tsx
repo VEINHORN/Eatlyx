@@ -4,7 +4,7 @@ import styles from "./Logo.module.css";
 const Logo = () => {
   return (
     <a href="#" className={styles.logo}>
-      <LogoImage alt="Logo" className={styles.logoImg} />
+      <LogoImage aria-label="Logo" className={styles.logoImg} />
     </a>
   );
 };

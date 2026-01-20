@@ -1,6 +1,13 @@
+import type React from "react";
 import styles from "./Button.module.css";
+import type { ButtonHTMLAttributes } from "react";
 
-const Button = ({ title, onClick, outlined, ...rest }) => {
+type ButtonProps = {
+  title: React.ReactNode;
+  outlined?: boolean;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
+
+const Button = ({ title, onClick, outlined, ...rest }: ButtonProps) => {
   return (
     <button
       className={`${styles.btn} ${

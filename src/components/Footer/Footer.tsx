@@ -36,9 +36,9 @@ const Footer = () => {
 
       <div className={styles.footerBottom}>
         <div className={styles.socialLinks}>
-          <InstagramIcon className={styles.socialLink} alt="Instagram" />
-          <TwitterIcon className={styles.socialLink} alt="Twitter" />
-          <YoutubeIcon className={styles.socialLink} alt="YouTube" />
+          <InstagramIcon className={styles.socialLink} aria-label="Instagram" />
+          <TwitterIcon className={styles.socialLink} aria-label="Twitter" />
+          <YoutubeIcon className={styles.socialLink} aria-label="YouTube" />
         </div>
       </div>
     </footer>
