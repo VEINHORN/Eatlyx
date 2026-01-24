@@ -3,7 +3,34 @@
 
   --primary-color: #35b8be;
   --primary-color-opaque-15: #35b8be26;
-  --footer-background-color: #e8f4f4;
+
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5fbfc;
+  --color-bg-input: #fafafa;
+
+  --color-text-primary: #08090a;
+  --color-text-secondary: #546285;
+  --color-text-dark: #28224b;
+
+  --color-border: #dddddd;
+
+  --color-outlined-button: #222222;
+  --color-border-outlined-button: rgba(97, 114, 131, 0.2);
+}
+
+:root[data-theme="dark"] {
+  --color-bg-primary: #1a1a2e;
+  --color-bg-secondary: #16213e;
+  --color-bg-input: #252542;
+
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #b8c1d1;
+  --color-text-dark: #e8e8e8;
+
+  --color-border: #3a3a5c;
+
+  --color-outlined-button: #dddddd;
+  --color-border-outlined-button: #35b8be;
 }
 
 body {
@@ -12,6 +39,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  background-color: var(--color-bg-primary);
 }
 
 .h1Title {

@@ -7,5 +7,5 @@
   font-style: normal;
   letter-spacing: 0.6px;
   line-height: 20px;
-  color: #08090a;
+  color: var(--color-text-primary);
 }

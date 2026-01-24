@@ -15,7 +15,7 @@ export const OrderPage = () => {
   const [house, setHouse] = useState("");
 
   return (
-    <div className={styles.orderpage}>
+    <div className={clsx([styles.orderpage, styles["orderpage-background"]])}>
       <h1 className={clsx("h1Title", styles.header)}>Finish your order</h1>
       {orderItems.length === 0 ? (
         <p className={styles.emptyCartMessage}>Your cart is empty</p>

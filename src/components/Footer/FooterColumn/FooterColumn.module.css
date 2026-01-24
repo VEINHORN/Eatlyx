@@ -9,6 +9,8 @@
   letter-spacing: 1.5px;
 
   margin-bottom: 1.5rem;
+
+  color: var(--color-text-secondary);
 }
 
 .footerColumn ul {
@@ -19,7 +21,7 @@
 }
 
 .footerColumn li {
-  color: #666;
+  color: var(--color-text-dark);
   size: 15px;
   font-weight: 400;
   font-style: normal;
@@ -29,7 +31,7 @@
 }
 
 .footerColumn a {
-  color: #546285;
+  color: var(--color-text-dark);
 
   text-decoration: none;
 }

@@ -3,6 +3,7 @@ import Button from "../../components/Button/Button";
 import styles from "./LoginPage.module.css";
 import { useNavigate } from "react-router";
 import { signInUser } from "../../services/authService";
+import clsx from "clsx";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -35,7 +36,7 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className={styles.loginpage}>
+    <div className={clsx([styles.loginpage, styles["loginpage-background"]])}>
       <h1 className="h1Title">Log in</h1>
       <div className={styles.login}>
         {error && <div className={styles.errorMessage}>{error}</div>}

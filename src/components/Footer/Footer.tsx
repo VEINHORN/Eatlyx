@@ -4,10 +4,11 @@ import YoutubeIcon from "../../assets/images/icons/youtube.svg?react";
 import Logo from "../Logo/Logo";
 import { FooterColumn } from "./FooterColumn/FooterColumn";
 import styles from "./Footer.module.css";
+import clsx from "clsx";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={clsx(styles.footer, styles["footer-background"])}>
       <div className={styles.footerTop}>
         <div className={styles.footerIntro}>
           <Logo />
