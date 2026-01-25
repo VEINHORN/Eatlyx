@@ -8,7 +8,7 @@ import { useState } from "react";
 import clsx from "clsx";
 
 export const OrderPage = () => {
-  useGetMealsQuery();
+  useGetMealsQuery(undefined);
 
   const orderItems = useSelector(selectEnrichedOrderItems);
   const [street, setStreet] = useState("");
@@ -27,9 +27,9 @@ export const OrderPage = () => {
                 <OrderItem
                   key={id}
                   id={id}
-                  image={meal?.img}
-                  meal={meal?.meal}
-                  price={meal?.price}
+                  image={meal?.img || ""}
+                  meal={meal?.meal || ""}
+                  price={meal?.price || ""}
                   quantity={quantity}
                 />
               ))}

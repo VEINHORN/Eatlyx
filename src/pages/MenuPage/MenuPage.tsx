@@ -6,10 +6,10 @@ import styles from "./MenuPage.module.css";
 import { useFetch } from "../../hooks/useFetch";
 
 export const MenuPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const meals = useFetch(
-    "https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals"
+    "https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals",
   );
 
   const categories = useMemo(() => {
@@ -21,7 +21,7 @@ export const MenuPage = () => {
     return meals.filter((meal) => meal.category === selectedCategory);
   }, [meals, selectedCategory]);
 
-  const onCategoryButtonHandler = (category) => {
+  const onCategoryButtonHandler = (category: string) => {
     if (category === selectedCategory) {
       setSelectedCategory(null);
       return;

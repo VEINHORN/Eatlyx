@@ -7,22 +7,36 @@ import Title from "../Card/Title/Title";
 import { useDispatch } from "react-redux";
 import { removeFromCart } from "../../features/cart/cartSlice";
 
-export const OrderItem = ({ id, image, meal, price, quantity }) => {
+type OrderItemProps = {
+  id: string;
+  image?: string;
+  meal?: string;
+  price?: string;
+  quantity: number;
+};
+
+export const OrderItem = ({
+  id,
+  image,
+  meal,
+  price,
+  quantity,
+}: OrderItemProps) => {
   const dispatch = useDispatch();
 
   return (
     <div className={styles.orderItem}>
       <div className={styles.left}>
         <div className={cardStyles.cardImage}>
-          <img src={image} />
+          <img src={image || ""} />
         </div>
-        <Title meal={meal} />
+        <Title meal={meal || ""} />
       </div>
 
       <div className={styles.right}>
-        <Price price={price} />
+        <Price price={price || ""} />
 
-        <Input value={quantity} disabled />
+        <Input value={String(quantity)} disabled />
 
         <Button title="X" onClick={() => dispatch(removeFromCart({ id }))} />
       </div>

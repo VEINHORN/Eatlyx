@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
 import styles from "./Card.module.css";
 import { useDispatch } from "react-redux";
@@ -6,6 +6,16 @@ import { addToCart } from "./../../features/cart/cartSlice";
 import clsx from "clsx";
 import Price from "./Price/Price";
 import Title from "./Title/Title";
+
+type CardProps = {
+  id: string;
+  meal: string;
+  image: string;
+  price: string;
+  instructions: string;
+  className?: string;
+  infoClassName?: string;
+};
 
 export const Card = ({
   id,
@@ -15,11 +25,11 @@ export const Card = ({
   instructions,
   className,
   infoClassName,
-}) => {
+}: CardProps) => {
   const [itemsCount, setItemsCount] = useState(1);
   const dispatch = useDispatch();
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setItemsCount(Number(event.target.value));
   };
 
