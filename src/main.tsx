@@ -11,24 +11,27 @@ import { AuthProvider } from "./components/AuthProvider/AuthProvider.jsx";
 import { PublicRoute } from "./components/PublicRoute/PublicRoute.jsx";
 import { store } from "./store";
 import { Provider } from "react-redux";
+import { ThemeProvider } from "./theme/ThemeProvider";
 
 createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />}>
-            <Route path="/" element={<HomePage />} index />
-            <Route path="menu" element={<MenuPage />} />
-            <Route element={<ProtectedRoute />}>
-              <Route path="order" element={<OrderPage />} />
+      <ThemeProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />}>
+              <Route path="/" element={<HomePage />} index />
+              <Route path="menu" element={<MenuPage />} />
+              <Route element={<ProtectedRoute />}>
+                <Route path="order" element={<OrderPage />} />
+              </Route>
+              <Route element={<PublicRoute />}>
+                <Route path="login" element={<LoginPage />} />
+              </Route>
             </Route>
-            <Route element={<PublicRoute />}>
-              <Route path="login" element={<LoginPage />} />
-            </Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </AuthProvider>
   </Provider>,
 );

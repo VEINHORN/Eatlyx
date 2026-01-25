@@ -5,6 +5,7 @@ import styles from "./Header.module.css";
 import { useAuth } from "../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router";
 import type React from "react";
+import { ThemeToggle } from "./ThemeToggle/ThemeToggle";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -33,7 +34,11 @@ const Header = () => {
                 : [{ label: "Login", path: "/login" }]),
             ]}
           />
-          <Bucket />
+
+          <div className={styles.btnWrapper}>
+            <Bucket />
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </header>

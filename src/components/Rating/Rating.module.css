@@ -5,6 +5,11 @@
 .ratingLogo {
   width: 5rem;
   height: auto;
+  filter: invert(0);
+}
+
+:root[data-theme="dark"] .ratingLogo {
+  filter: invert(1);
 }
 
 .rating {

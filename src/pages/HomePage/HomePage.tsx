@@ -4,12 +4,13 @@ import Button from "../../components/Button/Button";
 import { Rating } from "../../components/Rating/Rating";
 
 import styles from "./HomePage.module.css";
+import clsx from "clsx";
 
 export const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.homepage}>
+    <div className={clsx([styles.homepage, styles["homepage-background"]])}>
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1>

@@ -18,7 +18,7 @@
 }
 
 .btnOutlined {
-  color: #222222;
+  color: var(--color-outlined-button);
   background: transparent;
-  border: 1px solid rgba(97, 114, 131, 0.2);
+  border: 1px solid var(--color-border-outlined-button);
 }

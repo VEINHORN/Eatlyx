@@ -4,6 +4,7 @@ import { MealsList } from "../../components/MealsList/MealsList";
 
 import styles from "./MenuPage.module.css";
 import { useFetch } from "../../hooks/useFetch";
+import clsx from "clsx";
 
 export const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -31,7 +32,7 @@ export const MenuPage = () => {
   };
 
   return (
-    <div className={styles.menupage}>
+    <div className={clsx([styles.menupage, styles["menupage-background"]])}>
       <div className={styles.info}>
         <h1 className="h1Title">Browse our menu</h1>
         <p className={styles.pageDescription}>

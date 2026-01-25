@@ -10,7 +10,7 @@
   font-style: normal;
   letter-spacing: 0%;
 
-  color: #28224b;
+  color: var(--color-text-primary);
 }
 
 .navLinks li {
