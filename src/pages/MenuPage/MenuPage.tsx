@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Button from "../../components/Button/Button";
 import { MealsList } from "../../components/MealsList/MealsList";
 
@@ -6,8 +6,12 @@ import styles from "./MenuPage.module.css";
 import { useFetch } from "../../hooks/useFetch";
 import clsx from "clsx";
 
+const INITIAL_PAGE = 1;
+const MAX_PAGE_SIZE = 6;
+
 export const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [page, setPage] = useState(INITIAL_PAGE);
 
   const meals = useFetch(
     "https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals",
@@ -21,6 +25,13 @@ export const MenuPage = () => {
     if (!selectedCategory) return meals;
     return meals.filter((meal) => meal.category === selectedCategory);
   }, [meals, selectedCategory]);
+
+  useEffect(() => {
+    setPage(INITIAL_PAGE);
+  }, [meals]);
+
+  const pageMeals = filteredMeals.slice(0, page * MAX_PAGE_SIZE);
+  const canSeeMore = page * MAX_PAGE_SIZE < filteredMeals.length;
 
   const onCategoryButtonHandler = (category: string) => {
     if (category === selectedCategory) {
@@ -60,7 +71,16 @@ export const MenuPage = () => {
         ))}
       </div>
 
-      <MealsList meals={filteredMeals} />
+      <MealsList meals={pageMeals} />
+
+      <div className={styles.seeMoreContainer}>
+        {canSeeMore && (
+          <Button
+            title="See more"
+            onClick={() => setPage((prevPage) => prevPage + 1)}
+          />
+        )}
+      </div>
     </div>
   );
 };

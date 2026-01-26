@@ -58,3 +58,8 @@
 .tooltip:hover::after {
   opacity: 1;
 }
+
+.seeMoreContainer {
+  display: flex;
+  justify-content: center;
+}
