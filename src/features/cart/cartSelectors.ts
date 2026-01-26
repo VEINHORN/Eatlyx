@@ -6,7 +6,7 @@ import type { Meal } from "../../types/mealType";
 type EnrichedOrderItem = {
   id: string;
   quantity: number;
-  meal?: Meal | undefined;
+  meal: Meal;
 };
 
 export const selectOrderItems = (state: RootState): Record<string, number> =>
@@ -17,13 +17,20 @@ export const selectEnrichedOrderItems = createSelector(
   (itemsById, mealsResult): EnrichedOrderItem[] => {
     const meals: Meal[] = mealsResult?.data ?? [];
 
-    return Object.entries(itemsById).map(([id, quantity]) => {
+    return Object.entries(itemsById).flatMap(([id, quantity]) => {
       const meal = meals.find((m) => m.id === id);
-      return {
-        id,
-        quantity,
-        meal,
-      };
+
+      if (meal) {
+        return [
+          {
+            id,
+            quantity,
+            meal,
+          },
+        ];
+      }
+
+      return [];
     });
   },
 );

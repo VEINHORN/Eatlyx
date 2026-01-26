@@ -6,13 +6,9 @@ import { addToCart } from "./../../features/cart/cartSlice";
 import clsx from "clsx";
 import Price from "./Price/Price";
 import Title from "./Title/Title";
+import type { Meal } from "../../types/mealType";
 
-type CardProps = {
-  id: string;
-  meal: string;
-  image: string;
-  price: string;
-  instructions: string;
+type CardProps = Omit<Meal, "category"> & {
   className?: string;
   infoClassName?: string;
 };
@@ -20,7 +16,7 @@ type CardProps = {
 export const Card = ({
   id,
   meal,
-  image,
+  img,
   price,
   instructions,
   className,
@@ -36,7 +32,7 @@ export const Card = ({
   return (
     <div className={clsx(styles.card, className)}>
       <div className={styles.cardImage}>
-        <img src={image} />
+        <img src={img} />
       </div>
 
       <div className={clsx(styles.cardInfo, infoClassName)}>

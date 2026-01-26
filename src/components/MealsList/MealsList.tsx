@@ -31,7 +31,7 @@ export const MealsList = ({ meals }: MealsListProps) => {
               key={meal.id}
               id={meal.id}
               meal={meal.meal}
-              image={meal.img}
+              img={meal.img}
               price={meal.price}
               instructions={meal.instructions}
             />

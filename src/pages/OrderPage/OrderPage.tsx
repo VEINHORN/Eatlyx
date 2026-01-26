@@ -27,9 +27,9 @@ export const OrderPage = () => {
                 <OrderItem
                   key={id}
                   id={id}
-                  image={meal?.img || ""}
-                  meal={meal?.meal || ""}
-                  price={meal?.price || ""}
+                  img={meal.img}
+                  meal={meal.meal}
+                  price={meal.price}
                   quantity={quantity}
                 />
               ))}

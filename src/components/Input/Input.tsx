@@ -2,7 +2,7 @@ import type { InputHTMLAttributes } from "react";
 import styles from "./Input.module.css";
 
 type InputProps = {
-  value: string;
+  value: number;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const Input = ({ value, onChange, ...rest }: InputProps) => {
